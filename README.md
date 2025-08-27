@@ -98,6 +98,12 @@ I'm an aspiring DevOps & Data Science Developer with a passion for crafting real
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HimanshuSingh-966&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
 </div>
 
+## 🏆 GitHub Trophies
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=HimanshuSingh-966&theme=radical&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies" />
+</div>
+
 ---
 
 ## 🏆 Certifications
@@ -113,6 +119,7 @@ I'm always open to interesting conversations and collaboration opportunities!
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/himanshu-singh-35040128a)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:himanshu.singh.2kfive@gmail.com)
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/InternBeacon)
 
 ---
 
