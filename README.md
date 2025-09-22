@@ -8,7 +8,7 @@
 
 ## 🚀 About Me
 
-I'm an aspiring DevOps & Data Science Developer with a passion for crafting real-world solutions that leverage the power of AI and data. Currently pursuing B.Tech in Computer Science & Engineering with a Minor in Data Science at Shree Guru Gobind Singh Tricentenary University (CGPA: 8.97).
+I'm an aspiring DevOps & Data Science Developer with a passion for crafting real-world solutions that leverage the power of AI and data. Currently pursuing B.Tech in Computer Science & Engineering with a Minor in Data Science at Shree Guru Gobind Singh Tricentenary University (CGPA: 9.04).
 
 - 🔭 Currently working on **Real-Time Indian Sign Language Recognition System**
 - 🌱 Learning advanced **AI toolkits**, **deployment strategies**, and **API development**
@@ -73,17 +73,29 @@ I'm an aspiring DevOps & Data Science Developer with a passion for crafting real
 
 ## 🔥 Featured Projects
 
-### 🤟 [Real-Time Indian Sign Language Recognition System](https://github.com/HimanshuSingh-966)
+### 🤟 [Real-Time Indian Sign Language Recognition System](https://github.com/HimanshuSingh-966/Research_assistant)
 - **Custom Dataset**: 1,200+ high-resolution ISL gesture images (34 unique signs)
 - **AI Model**: YOLOv8 segmentation achieving **90%+ precision**
 - **Real-time Performance**: <150ms inference latency on CPU-only systems
 - **Tech Stack**: Python, YOLOv8, Flask, OpenCV, NumPy
+- **Project Link**: [GitHub Repo](https://github.com/HimanshuSingh-966/Research_assistant)
 
-### 📱 [InternBeacon - Smart Internship Monitor](https://t.me/InternBeacon)
+### 📱 [InternBeacon - Smart Internship Monitor](https://github.com/HimanshuSingh-966/InternBeacon)
 - **Web Scraping**: Monitors 100+ daily postings from AICTE and Internshala
 - **Architecture**: Modular OOP design with **95% code reusability**
 - **Real-time Alerts**: Telegram integration with <5-second notification latency
 - **Cloud Deployment**: **98% uptime** on Render Cloud with automated scheduling
+- **Project Link**: [GitHub Repo](https://github.com/HimanshuSingh-966/InternBeacon) • [Telegram Bot](https://t.me/InternBeacon)
+
+### 📊 [Datalix - Data Science Solutions](https://github.com/HimanshuSingh-966/Datalix)
+- **Modules**: Exploratory Data Analysis, Machine Learning, Visualizations
+- **Tech Stack**: Python, Pandas, Scikit-learn, Plotly
+- **Project Link**: [GitHub Repo](https://github.com/HimanshuSingh-966/Datalix)
+
+### 💸 [PayLog - Expense Tracker](https://github.com/HimanshuSingh-966/PayLog)
+- **Features**: Real-time expense logging, analytics dashboard
+- **Tech Stack**: Python, Flask, SQLite
+- **Project Link**: [GitHub Repo](https://github.com/HimanshuSingh-966/PayLog)
 
 ---
 
