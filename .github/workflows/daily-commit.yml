@@ -1,0 +1,47 @@
+name: Daily Activity Commit
+
+on:
+  schedule:
+    # Runs every day at 12:00 UTC (5:30 PM IST)
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  daily-commit:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "HimanshuSingh-966"
+          git config --global user.email "himanshu.singh.2kfive@gmail.com"
+
+      - name: Create activity log entry
+        run: |
+          mkdir -p activity
+          DATE=$(date -u +"%Y-%m-%d %H:%M UTC")
+          QUOTE_LIST=(
+            "Build something people want."
+            "Code is like humor. When you have to explain it, it's bad."
+            "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
+            "First, solve the problem. Then, write the code."
+            "Experience is the name everyone gives to their mistakes."
+            "In order to be irreplaceable, one must always be different."
+            "The best way to predict the future is to invent it."
+            "Simplicity is the soul of efficiency."
+            "Make it work, make it right, make it fast."
+            "Programs must be written for people to read, and only incidentally for machines to execute."
+          )
+          RANDOM_QUOTE=${QUOTE_LIST[$RANDOM % ${#QUOTE_LIST[@]}]}
+          echo "[$DATE] — $RANDOM_QUOTE" >> activity/log.txt
+
+      - name: Commit and push
+        run: |
+          git add activity/log.txt
+          git diff --cached --quiet || git commit -m "🤖 Daily activity log — $(date -u +"%Y-%m-%d")"
+          git push
