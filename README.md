@@ -16,7 +16,7 @@
 
 ---
 
-<img align="right" alt="Coding GIF" width="360" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif"/>
+<img align="right" alt="Coding GIF" width="340" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif"/>
 
 ## 👨‍💻 About Me
 
@@ -97,7 +97,7 @@
 **Data Analyst Intern** · *Sep 2025 – Oct 2025*
 > LLM-powered analytics across agriculture, science & business domains · Automated data exploration workflows · Certified by Edunet Foundation × Vodafone Idea Foundation
 
-### 🏆 Excelerate &nbsp; ⭐ *Star Performer*
+### 🏆 Excelerate &nbsp;⭐ *Star Performer*
 **Data Analyst Associate Intern (Team Lead)** · *Jul 2025 – Aug 2025*
 > Led 6 interns across **4 countries** · ↑25% delivery speed · Processed **10,000+** daily records at 95% accuracy · Built 3 executive dashboards · ↑40% decision-making speed · **100% project completion rate**
 
@@ -136,11 +136,23 @@
 </div>
 
 <div align="center">
-  <img width="68%" src="https://github-readme-streak-stats.herokuapp.com/?user=HimanshuSingh-966&theme=tokyonight&hide_border=true&background=0d1117" />
+  <img width="68%" src="https://streak-stats.demolab.com/?user=HimanshuSingh-966&theme=tokyonight&hide_border=true&background=0d1117" />
 </div>
 
 <div align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=HimanshuSingh-966&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=7" />
+</div>
+
+---
+
+## 🐍 Contribution Graph
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/github-contribution-grid-snake-dark.svg"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/github-contribution-grid-snake.svg"/>
+    <img alt="contribution snake animation" src="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/github-contribution-grid-snake.svg"/>
+  </picture>
 </div>
 
 ---
