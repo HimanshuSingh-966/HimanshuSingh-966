@@ -1,15 +1,14 @@
-name: Daily Activity Commit
+name: Daily Activity + Snake
 
 on:
   schedule:
-    # Runs every day at 12:00 UTC (5:30 PM IST)
     - cron: '0 12 * * *'
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
+  # ── Job 1: Daily commit ──
   daily-commit:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -28,14 +27,14 @@ jobs:
           QUOTE_LIST=(
             "Build something people want."
             "Code is like humor. When you have to explain it, it's bad."
-            "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
             "First, solve the problem. Then, write the code."
-            "Experience is the name everyone gives to their mistakes."
-            "In order to be irreplaceable, one must always be different."
             "The best way to predict the future is to invent it."
             "Simplicity is the soul of efficiency."
             "Make it work, make it right, make it fast."
-            "Programs must be written for people to read, and only incidentally for machines to execute."
+            "Data is the new oil — refine it well."
+            "Without data, you are just another person with an opinion."
+            "The goal is to turn data into information, and information into insight."
+            "It always seems impossible until it is done."
           )
           RANDOM_QUOTE=${QUOTE_LIST[$RANDOM % ${#QUOTE_LIST[@]}]}
           echo "[$DATE] — $RANDOM_QUOTE" >> activity/log.txt
@@ -44,4 +43,45 @@ jobs:
         run: |
           git add activity/log.txt
           git diff --cached --quiet || git commit -m "🤖 Daily activity log — $(date -u +"%Y-%m-%d")"
-          git push
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/HimanshuSingh-966/HimanshuSingh-966.git
+
+  # ── Job 2: Generate snake SVG ──
+  generate-snake:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate snake SVGs
+        uses: Platane/snk/svg-only@v3
+        id: snake
+        with:
+          github_user_name: HimanshuSingh-966
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: Verify SVGs were created
+        run: |
+          echo "=== Checking dist folder ==="
+          ls -la dist/ || echo "dist folder is EMPTY or missing"
+          echo "=== Light SVG ==="
+          cat dist/github-contribution-grid-snake.svg | head -5 || echo "Light SVG missing"
+          echo "=== Dark SVG ==="
+          cat dist/github-contribution-grid-snake-dark.svg | head -5 || echo "Dark SVG missing"
+
+      - name: Push SVGs to output branch
+        run: |
+          cd dist
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b output
+          git add github-contribution-grid-snake.svg
+          git add github-contribution-grid-snake-dark.svg
+          git commit -m "🐍 snake — $(date -u +"%Y-%m-%d")"
+          git remote add origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/HimanshuSingh-966/HimanshuSingh-966.git
+          git push --force origin output
+          echo "✅ Pushed to output branch"
