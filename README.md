@@ -131,7 +131,7 @@
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="175em" src="https://github-readme-stats.vercel.app/api?username=HimanshuSingh-966&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&bg_color=0d1117"/>
+  <img height="175em" src="https://github-readme-stats.vercel.app/api?username=HimanshuSingh-966&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&bg_color=0d1117&cache_seconds=1800"/>
   <img height="175em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HimanshuSingh-966&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117"/>
 </div>
 
@@ -140,7 +140,7 @@
 </div>
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=HimanshuSingh-966&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=7" />
+  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=HimanshuSingh-966&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=7C3AED&line=7C3AED&point=ffffff&area=true&area_color=7C3AED" />
 </div>
 
 ---
