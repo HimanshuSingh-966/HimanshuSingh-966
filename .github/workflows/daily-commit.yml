@@ -2,11 +2,14 @@ name: Daily Activity + Snake
 
 on:
   schedule:
-    - cron: '0 12 * * *'
+    - cron: "0 0 * * *"
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  # ── Job 1: Daily commit ──
+  # ── Job 1: Daily commit to keep graph green ──
   daily-commit:
     runs-on: ubuntu-latest
     steps:
@@ -20,13 +23,11 @@ jobs:
           git config --global user.name "HimanshuSingh-966"
           git config --global user.email "himanshu.singh.2kfive@gmail.com"
 
-      - name: Create activity log entry
+      - name: Append to activity log
         run: |
           mkdir -p activity
-          DATE=$(date -u +"%Y-%m-%d %H:%M UTC")
-          QUOTE_LIST=(
+          QUOTES=(
             "Build something people want."
-            "Code is like humor. When you have to explain it, it's bad."
             "First, solve the problem. Then, write the code."
             "The best way to predict the future is to invent it."
             "Simplicity is the soul of efficiency."
@@ -35,53 +36,41 @@ jobs:
             "Without data, you are just another person with an opinion."
             "The goal is to turn data into information, and information into insight."
             "It always seems impossible until it is done."
+            "Code is like humor. When you have to explain it, it's bad."
           )
-          RANDOM_QUOTE=${QUOTE_LIST[$RANDOM % ${#QUOTE_LIST[@]}]}
-          echo "[$DATE] — $RANDOM_QUOTE" >> activity/log.txt
+          QUOTE=${QUOTES[$RANDOM % ${#QUOTES[@]}]}
+          echo "[$(date -u +"%Y-%m-%d %H:%M UTC")] — $QUOTE" >> activity/log.txt
 
       - name: Commit and push
         run: |
-          git add activity/log.txt
-          git diff --cached --quiet || git commit -m "🤖 Daily activity log — $(date -u +"%Y-%m-%d")"
-          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/HimanshuSingh-966/HimanshuSingh-966.git
+          git add -f activity/log.txt
+          git status
+          git commit -m "🤖 Daily log — $(date -u +"%Y-%m-%d")" || echo "Nothing to commit"
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/HimanshuSingh-966/HimanshuSingh-966.git main
 
-  # ── Job 2: Generate snake SVG ──
+  # ── Job 2: Snake (Nikshey's working method) ──
   generate-snake:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    timeout-minutes: 10
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Generate snake SVGs
-        uses: Platane/snk/svg-only@v3
-        id: snake
+      - name: Generate Snake Animations
+        uses: Platane/snk@v3
         with:
-          github_user_name: HimanshuSingh-966
+          github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Verify SVGs were created
-        run: |
-          echo "=== Checking dist folder ==="
-          ls -la dist/ || echo "dist folder is EMPTY or missing"
-          echo "=== Light SVG ==="
-          cat dist/github-contribution-grid-snake.svg | head -5 || echo "Light SVG missing"
-          echo "=== Dark SVG ==="
-          cat dist/github-contribution-grid-snake-dark.svg | head -5 || echo "Dark SVG missing"
-
-      - name: Push SVGs to output branch
-        run: |
-          cd dist
-          git init
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -b output
-          git add github-contribution-grid-snake.svg
-          git add github-contribution-grid-snake-dark.svg
-          git commit -m "🐍 snake — $(date -u +"%Y-%m-%d")"
-          git remote add origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/HimanshuSingh-966/HimanshuSingh-966.git
-          git push --force origin output
-          echo "✅ Pushed to output branch"
+      - name: Deploy to Output Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
+          commit_message: "🐍 Update snake animation [skip ci]"
