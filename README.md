@@ -147,13 +147,11 @@
 
 ## 🐍 Contribution Snake
 
-> ⚡ Snake animates after the GitHub Action runs for the first time. Trigger it manually: **Actions → Daily Activity + Snake → Run workflow**
-
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/github-contribution-grid-snake-dark.svg"/>
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/github-contribution-grid-snake.svg"/>
-    <img alt="Snake animation loading — run the GitHub Action first" src="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/github-contribution-grid-snake.svg"/>
+    <img alt="contribution snake" src="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/ocean.gif"/>
   </picture>
 </div>
 
