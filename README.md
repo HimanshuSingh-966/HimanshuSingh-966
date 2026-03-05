@@ -131,8 +131,8 @@
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="175em" src="https://github-readme-stats.vercel.app/api?username=HimanshuSingh-966&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&bg_color=0d1117&cache_seconds=86400&v=3"/>
-  <img height="175em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HimanshuSingh-966&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&v=3"/>
+  <img height="175em" src="https://readme-stats.clckblog.space/api?username=HimanshuSingh-966&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&bg_color=0d1117&cache_seconds=86400&v=3"/>
+  <img height="175em" src="https://readme-stats.clckblog.space/api/top-langs/?username=HimanshuSingh-966&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&v=3"/>
 </div>
 
 <div align="center">
