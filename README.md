@@ -131,8 +131,8 @@
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="175em" src="https://github-readme-stats.vercel.app/api?username=HimanshuSingh-966&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&bg_color=0d1117&rank_icon=github&v=4"/>
-  <img height="175em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HimanshuSingh-966&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&v=4"/>
+  <img height="175em" src="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/stats.svg"/>
+  <img height="175em" src="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/langs.svg"/>
 </div>
 
 <div align="center">
