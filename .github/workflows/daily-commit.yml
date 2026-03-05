@@ -1,4 +1,4 @@
-name: Daily Activity + Snake
+name: Daily Activity + Snake + Stats
 
 on:
   schedule:
@@ -50,7 +50,7 @@ jobs:
             git push origin main
           fi
 
-  # ── Job 2: Snake (exact same as Nikshey's working method) ──
+  # ── Job 2: Snake ──
   generate-snake:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -69,10 +69,58 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy to Output Branch
+      - name: Deploy Snake to Output Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: output
-          commit_message: "Update snake animation [skip ci]"
+          keep_files: true
+          commit_message: "🐍 Update snake [skip ci]"
+
+  # ── Job 3: Generate Stats Cards ──
+  generate-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout output branch
+        uses: actions/checkout@v3
+        with:
+          ref: output
+          token: ${{ secrets.PAT_TOKEN }}
+          fetch-depth: 0
+
+      - name: Generate Stats SVGs
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          user: HimanshuSingh-966
+          template: classic
+          base: header, activity, community, repositories
+          config_timezone: Asia/Kolkata
+          filename: stats.svg
+          plugin_languages: yes
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_sections: most-used
+          config_output: svg
+          config_display: large
+
+      - name: Generate Langs SVG
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          user: HimanshuSingh-966
+          template: classic
+          base: ""
+          filename: langs.svg
+          plugin_languages: yes
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_sections: most-used
+          config_output: svg
+
+      - name: Push Stats to Output Branch
+        run: |
+          git config user.name "HimanshuSingh-966"
+          git config user.email "himanshu.singh.2kfive@gmail.com"
+          git add stats.svg langs.svg || true
+          git diff --cached --quiet || git commit -m "📊 Update stats [skip ci]"
+          git push origin output
