@@ -131,16 +131,16 @@
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="175em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=HimanshuSingh-966&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&bg_color=0d1117&cache_seconds=1800"/>
-  <img height="175em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=HimanshuSingh-966&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117"/>
+  <img height="175em" src="https://github-readme-stats.vercel.app/api?username=HimanshuSingh-966&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&bg_color=0d1117&cache_seconds=86400&v=3"/>
+  <img height="175em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HimanshuSingh-966&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&v=3"/>
 </div>
 
 <div align="center">
-  <img width="68%" src="https://streak-stats.demolab.com/?user=HimanshuSingh-966&theme=tokyonight&hide_border=true&background=0d1117" />
+  <img width="68%" src="https://streak-stats.demolab.com/?user=HimanshuSingh-966&theme=tokyonight&hide_border=true&background=0d1117&v=3" />
 </div>
 
 <div align="center">
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=HimanshuSingh-966&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=7C3AED&line=7C3AED&point=ffffff&area=true&area_color=7C3AED" />
+  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=HimanshuSingh-966&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=7C3AED&line=7C3AED&point=ffffff&area=true&area_color=7C3AED&v=3" />
 </div>
 
 ---
@@ -149,8 +149,8 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/github-contribution-grid-snake-dark.svg"/>
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/github-contribution-grid-snake.svg"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/github-snake-dark.svg"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/github-snake.svg"/>
     <img alt="contribution snake" src="https://raw.githubusercontent.com/HimanshuSingh-966/HimanshuSingh-966/output/ocean.gif"/>
   </picture>
 </div>
