@@ -21,7 +21,7 @@ jobs:
           git config --global user.name "HimanshuSingh-966"
           git config --global user.email "himanshu.singh.2kfive@gmail.com"
 
-      - name: Append to activity log
+      - name: Create daily log file
         run: |
           mkdir -p activity
           QUOTES=(
@@ -37,20 +37,20 @@ jobs:
             "Code is like humor. When you have to explain it, it's bad."
           )
           QUOTE=${QUOTES[$RANDOM % ${#QUOTES[@]}]}
-          echo "[$(date -u +"%Y-%m-%d %H:%M UTC")] — $QUOTE" >> activity/log.txt
+          FILENAME="activity/$(date -u +"%Y-%m-%d_%H-%M-%S").txt"
+          echo "[$(date -u +"%Y-%m-%d %H:%M UTC")] — $QUOTE" > "$FILENAME"
 
       - name: Commit and push
         run: |
-          git add activity/log.txt
+          git add activity/
           if git diff --cached --quiet; then
             echo "Nothing to commit, skipping"
           else
             git commit -m "🤖 Daily log — $(date -u +"%Y-%m-%d") [skip ci]"
-            git pull --rebase origin main
             git push origin main
           fi
 
-  # ── Job 2: Snake ──
+  # ── Job 2: Snake (exact same as Nikshey's working method) ──
   generate-snake:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -63,8 +63,8 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -75,4 +75,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: output
-          commit_message: "🐍 Update snake [skip ci]"
+          commit_message: "Update snake animation [skip ci]"
